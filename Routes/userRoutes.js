@@ -1,8 +1,9 @@
 const express = require('express');
-const { signupUser, loginUser, updateBooksForExchange, updateBooksRequired, getUserBooks, addChat, removeChat, getChat, getOneBook, updateProfile, verifyToken, getSingleUser, getContacts, getUserInfo, removeBooksRequired, removeBooksForExchange, getDeals, doneDeal } = require('../Controllers/userController');
+const { signupUser, loginUser, updateBooksForExchange, updateBooksRequired, getUserBooks, addChat, removeChat, getChat, getOneBook, updateProfile, verifyToken, getSingleUser, getContacts, getUserInfo, removeBooksRequired, removeBooksForExchange, getDeals, doneDeal, keepAlive } = require('../Controllers/userController');
 const { upload } = require('../utils/uploadFile');
 const router = express.Router();
 
+router.post("/keep-alive", keepAlive);
 router.post("/signup", signupUser);
 router.post('/login', loginUser);
 router.put('/updateProfile', upload.single("image") ,updateProfile);

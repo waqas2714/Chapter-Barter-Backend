@@ -39,6 +39,10 @@ function removeDuplicateObjects(arr) {
 
 //Middleware Functions
 
+const keepAlive = (req, res)=>{
+  res.send("I am alive");
+}
+
 const verifyToken = async (req, res) => {
   try {
     const { token } = req.body;
@@ -536,6 +540,7 @@ const doneDeal = async (req, res) => {
 };
 
 module.exports = {
+  keepAlive,
   signupUser,
   loginUser,
   updateBooksForExchange,
