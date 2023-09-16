@@ -3,7 +3,7 @@ const { signupUser, loginUser, updateBooksForExchange, updateBooksRequired, getU
 const { upload } = require('../utils/uploadFile');
 const router = express.Router();
 
-router.post("/keep-alive", keepAlive);
+router.get("/keep-alive", keepAlive);
 router.post("/signup", signupUser);
 router.post('/login', loginUser);
 router.put('/updateProfile', upload.single("image") ,updateProfile);
